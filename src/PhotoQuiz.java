@@ -20,7 +20,7 @@ public class PhotoQuiz {
 		JFrame quizWindow = new JFrame();
 		quizWindow.setVisible(true);
                 quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // This will make sure the program exits when you close the window
-
+                int score=0;
 		// 1. find an image on the internet, and put its URL in a String variable (from your browser, right click on the image, and select “Copy Image Address”)
                 String L=("https://shop.monrovia.com/media/catalog/product/5/5/551_2.jpg");
 		// 2. create a variable of type "Component" that will hold your image
@@ -36,11 +36,12 @@ public class PhotoQuiz {
 		// 7. print "CORRECT" if the user gave the right answer
                 if(P.equals("white")) {
                 	JOptionPane.showMessageDialog(null, "CORRECT");
+                	score++;
                 }
 		// 8. print "INCORRECT" if the answer is wrong
                 else { JOptionPane.showMessageDialog(null, "INCORRECT");
-                
                 }
+                JOptionPane.showConfirmDialog(null, score);
 		// 9. remove the component from the quiz window (you may not see the effect of this until step 12)
                 quizWindow.remove(image);
 		// 10. find another image and create it (might take more than one line of code)
@@ -59,10 +60,13 @@ public class PhotoQuiz {
 		// 14+ check answer, say if correct or incorrect, etc.
                 if(J.equals("yellow")){
                 	JOptionPane.showMessageDialog(null, "CORRECT");
+                	score++;
                 }
                 else {
                 	JOptionPane.showMessageDialog(null, "INCORRECT");
+                	
                 }
+                JOptionPane.showConfirmDialog(null, score);
                 
 
 	}
@@ -76,6 +80,7 @@ public class PhotoQuiz {
 
 	/* OPTIONAL */
 	// *14. add scoring to your quiz
+	
 	
 	// *15. make something happen when mouse enters image (imageComponent.addMouseMotionListener()) 
 }
